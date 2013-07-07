@@ -38,7 +38,7 @@ when 'debian'
   # Configure Dotdeb repos
   # TODO: move this to it's own 'dotdeb' cookbook?
   # http://www.dotdeb.org/instructions/
-  if node.lsb.codename == 'squeeze'
+  if node.platform_version.to_f >= 6.0
     apt_repository "dotdeb" do
       uri "http://packages.dotdeb.org"
       distribution "squeeze"
